@@ -26,14 +26,12 @@ class Xheader extends Component {
 		var pwd = this.getCookie("password");
 		var name = this.getCookie("name");
 		this.state.username=name;
-		console.log(name)
+		
 		if(name == "" || name == undefined){
 
 		}else{
           this.state.isShow=!this.state.isShow
 		}
-			console.log(this.state.isShow)
-		
 	}
 
 	render() {

@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import './Login.css';
 import img from '../../access/logo.png';
+import { Link} from "react-router-dom";
 class Login extends Component {
 	constructor(props){
 		super(props);
@@ -41,8 +42,8 @@ class Login extends Component {
 							<button className="btn btn-block btn-radius btn-blue" onClick={()=>this.btnlogin()}>登录</button>
 						</div>
 						<div className="flex justify-content-end forget-psd">
-							<a href="#/findPsd?redirectUrl=https%3A%2F%2Fjrwx.trc.com%2Fmy">忘记密码</a>
-							<a className="new-user fs-14" href="#"><span>新用户注册</span></a>
+							<Link to="#/findPsd?redirectUrl=https%3A%2F%2Fjrwx.trc.com%2Fmy">忘记密码</Link>
+							<Link className="new-user fs-14" to="/signin"><span>新用户注册</span></Link>
 						</div>
 					</div>
 				</div>
@@ -75,7 +76,7 @@ class Login extends Component {
 			if(password===""||password===undefined){
 				alert("请输入密码")	
 			}else{
-				this.props.history.push('/')
+				this.props.history.push('/my')
 			}
 		}
 		

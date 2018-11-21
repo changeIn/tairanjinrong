@@ -14,7 +14,7 @@ class Xmymian extends Component {
 				,icon:"nav-profit"
 			},{
 				title:"资金流水"
-				,href:'/signin'
+				,href:'/fund'
 				,icon:"nav-file"
 			},{
 				title:"出借记录"

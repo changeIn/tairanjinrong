@@ -41,12 +41,13 @@ class Profile extends Component {
 			this.state.arr[0].username = name;
 		}
 	}
+	
 	logon(){
-		var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
-				if(keys) {
-					for(var i = keys.length; i--;)
-						document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
-				}
+		var d = new Date();
+		var data=d.getDate()-1
+		document.cookie="name= ; expires="+data+"; path=/"
+		document.cookie="password= ; expires="+data+"; path=/"
+		
 	}
 	render() {
 		return(
