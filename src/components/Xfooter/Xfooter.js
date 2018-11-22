@@ -1,34 +1,64 @@
 import React, {
-	Component
-} from 'react';
-import './Xfooter.css';
-import { Link} from "react-router-dom";
-class Xfooter extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			
-		}
-	}
-	render() {
-		return(
-			<div>
-				<div className="ui-module-bottom_navBar container">
-					<ul className="clearfix">
-						<li className="col-md-8 item">
-							<Link to="/"><span className="nav-icon nav-home"></span></Link>
-						</li>
-						<li className="col-md-8 item">
-							<a href="/product/list"><span className="nav-icon nav-invest"></span></a>
-						</li>
-						<li className="col-md-8 item">
-							<Link className="active" aria-current="page" to="/my"><span className="nav-icon nav-user"></span></Link>
-						</li>
-					</ul>
-				</div>
-			</div>
-		)
-	}
+    Component
+} from "react";
+import "../../assets/app.css";
+// import iconTabbar from "../../assets/icon_tabbar.png";
+import { Link } from "react-router-dom";
 
+// v-if  
+// v-show
+// v-for
+// v-model
+class Xfooter extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            tab:0,
+            tabs:[{
+                title:"首页",
+                href:"terran",
+                className:"nav-home",
+                dot:false
+            },{
+                title:"出借",
+                href:"contact",
+                className:"nav-invest",
+                dot:false
+            },{
+                title:"我的",
+                href:"my",
+                className:"nav-user",
+                dot:true
+            }]            
+        }
+    }
+    ing(n){
+        return n+"ing"
+    }
+    toggleTab(index,e){
+        this.setState({
+            tab:index
+        })
+    }
+    render(){
+        return (
+
+            <div className="ui-module-bottom_navBar container">
+                <ul className="clearfix">
+                    {(()=>{
+                        return this.state.tabs.map((item,index)=>{
+                            return(
+                                <li className="col-md-8 item">
+                                    <Link to={`/home/${item.href}`} onClick={this.toggleTab.bind(this,index)} key={index} className={this.state.tab===index?"active":""} aria-current={this.state.tab===index?"page":""}>
+                                        <span className={`nav-icon ${item.className}`}></span>
+                                    </Link>
+                                </li>
+                            )
+                        })
+                    })()}
+                </ul>
+            </div>
+        )
+    }
 }
 export default Xfooter;

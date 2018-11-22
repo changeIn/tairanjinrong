@@ -1,10 +1,13 @@
 import React, {
     Component
 } from "react";
-import "./Home.css";
+import "./Home.jsx";
+import "../../assets/webStatistics.css";
 
-import Xfooter from '../../components/Xfooter/Xfooter';
+import Terran from '../Terran/Terran.jsx';
+// import Contact from '../Contact/Contact.jsx';
 
+import Xfooter from '../../components/Xfooter/Xfooter.js';
 import { Route } from "react-router-dom";
 class Home extends Component {
     constructor(props) {
@@ -14,9 +17,11 @@ class Home extends Component {
     }
     render() {
         return (
-            <div >
+            <div>
+                <Route path="/home" component={Terran} />
+
                 <Xfooter/>
-            </div> 
+            </div>
         )
     }
 }

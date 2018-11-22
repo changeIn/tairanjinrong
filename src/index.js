@@ -1,30 +1,65 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route , Redirect} from "react-router-dom";
-import './index.css';
+// axios
+import axios from 'axios';
 
-import Signin from './pages/Signin/signin.jsx';
-import Login from './pages/Login/Login.jsx';
-import My from './pages/My/My.jsx';
+
+// 虚拟DOM
+import ReactDOM from 'react-dom';
+
+
+// 路由功能
+import { HashRouter as Router, Route , Redirect} from "react-router-dom";
+
+// 状态管理
+import {Provider, connect} from 'react-redux';
+import {createStore} from 'redux';
+import './index.css';
+import './assets/app.css';
+// 子组件 复用组件
+// 页面组件 容器组件
 import Home from './pages/Home/Home.jsx';
-import Profile from './pages/Profile/Profile.jsx';
+import Terran from './pages/Terran/Terran.jsx';
+
+// import Detail from './pages/Detail/Detail.jsx';
 import * as serviceWorker from './serviceWorker';
+React.axios = axios;
+//创建仓库
+const store = createStore(function(state={
+    name:"qq",
+    skill:"ps",
+    isShowActionSheet:false
+}, action){
+    const count = state.count
+    switch (action.type) {
+      case 'increase':
+        return {
+          ...state,
+          count: count + 2
+        }
+      case 'multi':
+        return Object.assign({}, state, {name: action.name});
+      case 'editText':
+        return {
+            ...state,
+            text:action.text
+        }
+      default:
+        return state
+    }
+});
 
 ReactDOM.render(
-	<Router>
-		<div>
-			<Route path="/" exact component={Home} />
-			<Route path="/signin" component={Signin} />
-			<Route path="/login" component={Login} />
-			<Route path="/my" component={My} />
-			<Route path="/profile" component={Profile} />
-			
-			
+    <Provider store={store}>
+        <Router>
+            <div>
+                <Route path="/home" component={Home} />
 
-		</div>
-	</Router>
-	,
-	document.getElementById('root'));
+            </div>
+        </Router>
+        </Provider>
+    , 
+    document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
