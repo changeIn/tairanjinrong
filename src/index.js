@@ -9,6 +9,7 @@ import My from './pages/My/My.jsx';
 import Home from './pages/Home/Home.jsx';
 import Profile from './pages/Profile/Profile.jsx';
 import Fund from './pages/Fund/Fund.jsx';
+import Xshenfen from './components/Xshenfen/Xshenfen.jsx';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
@@ -20,6 +21,8 @@ ReactDOM.render(
 			<Route path="/my" component={My} />
 			<Route path="/profile" component={Profile} />
 			<Route path="/fund" component={Fund} />
+			<Route path="/Xshenfen" component={Xshenfen} />
+			
 			
 			
 			

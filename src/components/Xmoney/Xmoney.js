@@ -8,8 +8,11 @@ class Xmoney extends Component {
 		super(props);
 		this.state = {
 			isShow:false,
+			isok:false,
 		}
 		this.xuanran();
+		
+		
 	}
 	
 	getCookie(cname) {
@@ -28,8 +31,16 @@ class Xmoney extends Component {
 		if(name == "" || name == undefined){
 
 		}else{
+		
+			
           this.state.isShow=!this.state.isShow
 		}
+	}
+	eye(){
+		this.setState({
+          	isok:!this.state.isok
+          })
+          
 	}
 	render() {
 		return(
@@ -38,9 +49,9 @@ class Xmoney extends Component {
 					<div className="col-md-24 clearfix">
 						<div className="col-md-10">
 							<label className="fs-12 c-333">可用余额
-								<div className="eye-logo visible"></div>
+								<div onClick={this.eye.bind(this)}  className={this.state.isok?"eye-logo visible ": "eye-logo hide"}></div>
 							</label><br/>
-							<span className="fs-18 c-333">0.00</span>
+							<span className="fs-18 c-333">{this.state.isok?"18800000.00": "*******"}</span>
 						</div>
 						<div className="col-md-14 txtr">
 							<span className="trc-btn trc-btn-outline trc-btn-blue">提现</span>
