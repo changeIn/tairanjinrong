@@ -8,10 +8,10 @@ import "./My.css";
 import Xheader from '../../components/Xmyheader/Xheader';
 import Xmoney from '../../components/Xmoney/Xmoney';
 import Xmymian from '../../components/Xmymian/Xmymian';
-import Xfooter from '../../components/Xfooter/Xfooter';
+
 
 import { Route } from "react-router-dom";
-class Home extends Component {
+class My extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,11 +19,10 @@ class Home extends Component {
     }
     render() {
         return (
-            <div >
+            <div className="container">
                 <Xheader />
                 <Xmoney/>
                 <Xmymian/>
-                <Xfooter/>
             </div>
                 
             
@@ -31,4 +30,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default My;

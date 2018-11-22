@@ -23,11 +23,11 @@ class Fund extends Component {
 									<p></p>
 									<div className="empty-btns-wrap"></div>
 								</div>
-								<div> </div>
+								
 							</div>
 						</div>
 					</div>
-					<div></div>
+					
 				</div>
 		)
 	}

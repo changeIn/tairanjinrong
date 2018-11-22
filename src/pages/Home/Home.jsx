@@ -3,7 +3,7 @@ import React, {
 } from "react";
 import "./Home.css";
 
-import Xfooter from '../../components/Xfooter/Xfooter';
+
 
 import { Route } from "react-router-dom";
 class Home extends Component {
@@ -15,7 +15,7 @@ class Home extends Component {
     render() {
         return (
             <div >
-                <Xfooter/>
+               	这是home
             </div> 
         )
     }

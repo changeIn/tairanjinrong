@@ -5,23 +5,25 @@ import './index.css';
 
 import Signin from './pages/Signin/signin.jsx';
 import Login from './pages/Login/Login.jsx';
-import My from './pages/My/My.jsx';
-import Home from './pages/Home/Home.jsx';
+import Terran from './pages/Terran/Terran.jsx';
 import Profile from './pages/Profile/Profile.jsx';
 import Fund from './pages/Fund/Fund.jsx';
 import Xshenfen from './components/Xshenfen/Xshenfen.jsx';
+import Record from './pages/Record/Record.jsx';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
 	<Router>
-		<div>
-			<Route path="/home" exact component={Home} />
+		<div >
+			<Route path="/" exact component={Terran} />
 			<Route path="/signin" component={Signin} />
 			<Route path="/login" component={Login} />
-			<Route path="/my" component={My} />
+			<Route path="/terran/" component={Terran} />
 			<Route path="/profile" component={Profile} />
 			<Route path="/fund" component={Fund} />
 			<Route path="/Xshenfen" component={Xshenfen} />
+			<Route path="/record/" component={Record} />
+			
 			
 			
 			
