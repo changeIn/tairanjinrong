@@ -7,26 +7,50 @@ class Xfooter extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			
+			tab:0,
+            tabs:[{
+                title:"首页",
+                href:"/terran/home",
+                className:"nav-home",
+                
+            },{
+                title:"出借",
+                href:"/",
+                className:"nav-invest",
+                
+            },{
+                title:"我的",
+                href:"/terran/my",
+                className:"nav-user",
+                
+            }]         
 		}
 	}
+	toggleTab(index,e){
+        this.setState({
+            tab:index
+        })
+    }
 	render() {
 		return(
-			<div>
+
 				<div className="ui-module-bottom_navBar container">
 					<ul className="clearfix">
-						<li className="col-md-8 item">
-							<Link to="/"><span className="nav-icon nav-home"></span></Link>
-						</li>
-						<li className="col-md-8 item">
-							<a href="/product/list"><span className="nav-icon nav-invest"></span></a>
-						</li>
-						<li className="col-md-8 item">
-							<Link className="active" aria-current="page" to="/my"><span className="nav-icon nav-user"></span></Link>
-						</li>
+					 {(()=>{
+                        return this.state.tabs.map((item,index)=>{
+                            return(
+                               	<li className="col-md-8 item" onClick={this.toggleTab.bind(this,index)} key={index} >
+									<Link className={this.state.tab===index?"active":""} aria-current={this.state.tab===index?"page":""} to={item.href}>
+										<span  className={`nav-icon ${item.className}`}></span>
+									</Link>
+								</li>
+                            )
+                        })
+                    })()}
+						
 					</ul>
 				</div>
-			</div>
+
 		)
 	}
 

@@ -18,12 +18,12 @@ class Xmymian extends Component {
 				,icon:"nav-file"
 			},{
 				title:"出借记录"
-				,href:''
+				,href:'/record/Fund'
 				,icon:"nav-notes"
 			},{
 				title:"标的转让"
 				,icon:"nav-transform"
-				,href:''
+				,href:'/record/Fund'
 			}],
 			arr2:[{
 				title:"我的卡券"
@@ -45,10 +45,6 @@ class Xmymian extends Component {
 			},{
 				title:"联系客服"
 				,icon:"nav-service"
-				,href:''
-			},{
-				title:"APP下载"
-				,icon:"nav-download"
 				,href:''
 			},{
 				title:"常见问题"
@@ -121,6 +117,7 @@ class Xmymian extends Component {
                 })()}
 
 				</ul>
+				
 			</div>
 			<div className="ui-nav-list">
 				<ul>
