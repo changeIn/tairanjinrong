@@ -16,7 +16,7 @@ class Xfooter extends Component {
             tab:0,
             tabs:[{
                 title:"首页",
-                href:"terran",
+                href:"home",
                 className:"nav-home",
                 dot:false
             },{
@@ -49,7 +49,7 @@ class Xfooter extends Component {
                         return this.state.tabs.map((item,index)=>{
                             return(
                                 <li className="col-md-8 item">
-                                    <Link to={`/home/${item.href}`} onClick={this.toggleTab.bind(this,index)} key={index} className={this.state.tab===index?"active":""} aria-current={this.state.tab===index?"page":""}>
+                                    <Link to={`/terran/${item.href}`} onClick={this.toggleTab.bind(this,index)} key={index} className={this.state.tab===index?"active":""} aria-current={this.state.tab===index?"page":""}>
                                         <span className={`nav-icon ${item.className}`}></span>
                                     </Link>
                                 </li>

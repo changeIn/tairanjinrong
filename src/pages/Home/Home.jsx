@@ -2,13 +2,13 @@ import React, {
     Component
 } from "react";
 import "./Home.jsx";
-import "../../assets/webStatistics.css";
+// import "../../assets/swiper.js";
+import Xheader from '../../components/Xheader/Xheader.js';
+import Xlist from '../../components/Xlist/Xlist.js';
+import Xroll from '../../components/Xroll/Xroll.js';
+import Xbanner from '../../components/Xbanner/Xbanner.js';
+import Xplan from '../../components/Xplan/Xplan.js';
 
-import Terran from '../Terran/Terran.jsx';
-// import Contact from '../Contact/Contact.jsx';
-
-import Xfooter from '../../components/Xfooter/Xfooter.js';
-import { Route } from "react-router-dom";
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -17,10 +17,12 @@ class Home extends Component {
     }
     render() {
         return (
-            <div>
-                <Route path="/home" component={Terran} />
-
-                <Xfooter/>
+            <div className="container page-index">
+                <Xheader/>
+                <Xlist/>
+                <Xroll/>
+                <Xbanner/>
+                <Xplan/>
             </div>
         )
     }

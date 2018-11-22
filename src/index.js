@@ -17,7 +17,6 @@ import './index.css';
 import './assets/app.css';
 // 子组件 复用组件
 // 页面组件 容器组件
-import Home from './pages/Home/Home.jsx';
 import Terran from './pages/Terran/Terran.jsx';
 
 // import Detail from './pages/Detail/Detail.jsx';
@@ -52,7 +51,7 @@ ReactDOM.render(
     <Provider store={store}>
         <Router>
             <div>
-                <Route path="/home" component={Home} />
+                <Route path="/terran/" component={Terran} />
 
             </div>
         </Router>

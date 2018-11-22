@@ -62,7 +62,7 @@ class Xlist extends Component {
                         </Link>
                     </li>
                 </ul>
-              </div>
+            </div>
         )
     }
     // js
