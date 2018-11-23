@@ -1,11 +1,14 @@
 import React, {
     Component
 } from "react";
-import "./Home.css";
+import "./Home.jsx";
+// import "../../assets/swiper.js";
+import Xheader from '../../components/Xheader/Xheader.js';
+import Xlist from '../../components/Xlist/Xlist.js';
+import Xroll from '../../components/Xroll/Xroll.js';
+import Xbanner from '../../components/Xbanner/Xbanner.js';
+import Xplan from '../../components/Xplan/Xplan.js';
 
-
-
-import { Route } from "react-router-dom";
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -14,9 +17,13 @@ class Home extends Component {
     }
     render() {
         return (
-            <div >
-               	这是home
-            </div> 
+            <div className="container page-index">
+                <Xheader/>
+                <Xlist/>
+                <Xroll/>
+                <Xbanner/>
+                <Xplan/>
+            </div>
         )
     }
 }

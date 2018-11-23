@@ -51,7 +51,7 @@ class Xshenfen extends Component {
 									{(()=>{
 				                        return this.state.tishi.map((item,index)=>{
 				                            return(
-				                               	<li  >
+				                               	<li  key={index}>
 													{item.title}
 												</li>
 				                            )

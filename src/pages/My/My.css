@@ -5912,12 +5912,6 @@ body {
 	padding-top: 10px
 }
 
-.mod-fund-wrap .unlogin-panel {
-	height: 140px;
-	width: 100%;
-	background: url(/imgs/ui-unlogin-panel.d8ba59ca.png) no-repeat 50%;
-	background-size: auto 70%
-}
 
 .mod-fund-wrap .fund-info-container {
 	padding-top: 14px

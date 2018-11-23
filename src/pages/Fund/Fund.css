@@ -5877,15 +5877,7 @@ body {
 	background-color: #f5f5f5
 }
 
-.mod-fund-wrap {
-	background: url(/imgs/ui-box-bg.30ce0204.png) #fff no-repeat bottom;
-	background-size: 100%;
-	box-sizing: border-box;
-	height: 160px;
-	text-align: center;
-	color: #fff;
-	overflow: hidden
-}
+
 
 .mod-fund-wrap .asset-panel {
 	padding-top: 14px
@@ -5910,12 +5902,7 @@ body {
 	padding-top: 10px
 }
 
-.mod-fund-wrap .unlogin-panel {
-	height: 140px;
-	width: 100%;
-	background: url(/imgs/ui-unlogin-panel.d8ba59ca.png) no-repeat 50%;
-	background-size: auto 70%
-}
+
 
 .mod-fund-wrap .fund-info-container {
 	padding-top: 14px

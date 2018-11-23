@@ -76,7 +76,7 @@ class Login extends Component {
 			if(password===""||password===undefined){
 				alert("请输入密码")	
 			}else{
-				this.props.history.push('/my')
+				this.props.history.push('/terran/home')
 			}
 		}
 		

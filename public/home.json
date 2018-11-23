@@ -1,12 +1,4 @@
 {
-	"code": "200",
-	"message": "OK",
-	"data": {
-		"pageInfo": {
-			"pageIndex": 1,
-			"pageSize": 4,
-			"total": 3004
-		},
 		"list": [{
 			"buttonName": "立即出借",
 			"isRate": "1",
@@ -112,5 +104,5 @@
 			"serveDay": 0,
 			"status": "3"
 		}]
-	}
+	
 }
