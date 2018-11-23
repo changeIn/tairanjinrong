@@ -5,7 +5,7 @@ import "./Contact.jsx";
 import "../../assets/webStatistics.css";
 import Xtips from "../../components/Xtips/Xtips.js";
 import Xtab from "../../components/Xtab/Xtab.js";
-import Xplans from '../../components/Xplans/Xplans.js';
+import Xplans from '../../components/Xplans/Xplans.jsx';
 import Xbulk from '../../components/Xbulk/Xbulk.js';
 import Xtransfer from '../../components/Xtransfer/Xtransfer.js';
 import { Route } from "react-router-dom";

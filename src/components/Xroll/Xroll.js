@@ -59,11 +59,6 @@ class Xroll extends Component {
         )
     }
     // js
-        // return{
-        //    var swiper = new Swiper('.swiper-container', {
-        //       direction: 'vertical',
-        //     }) 
-        // }
 }
 
 export default connect((state)=>{

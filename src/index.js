@@ -19,7 +19,7 @@ import './assets/app.css';
 // 页面组件 容器组件
 import Terran from './pages/Terran/Terran.jsx';
 
-// import Detail from './pages/Detail/Detail.jsx';
+import Detail from './pages/Detail/Detail.jsx';
 import * as serviceWorker from './serviceWorker';
 React.axios = axios;
 //创建仓库
@@ -52,7 +52,7 @@ ReactDOM.render(
         <Router>
             <div>
                 <Route path="/terran/" component={Terran} />
-
+                <Route path="/detail/:id/:id" component={Detail} />
             </div>
         </Router>
         </Provider>

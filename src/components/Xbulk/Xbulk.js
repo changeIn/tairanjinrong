@@ -5,12 +5,26 @@ import "./Xbulk.js";
 import "../../assets/app.css";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
+import store from "../../libs/store.js";
 class Xbulk extends Component {
     constructor(props){
         super(props);
         this.state = {
-
+            list:[]
         }
+    }
+    loadMore() {
+        console.log(this)
+
+        React.axios.get("bulk.json", {
+        }).then((response) => {
+            console.log(response.data.list);
+            this.setState({
+                list: this.state.list.concat(response.data.list)
+            })
+        }).catch(function (error) {
+            console.log(error);
+        });
     }
     // html
     render(){
@@ -20,36 +34,50 @@ class Xbulk extends Component {
                     <div id="lu55p8bfeh8" className="swiper-slide next">
                         <div className="list-wrap rScroll">
                             <ul className="">
-                                <li className="loan-pitem finish clearfix"><Link className="block-link" to="/"></Link>
-                                    <div className="row clearfix">
-                                        <div className="pro-name col-md-24 clearfix">
-                                            <span className="fs-14 c-666">泰信宝No.18112176ZY</span>
-                                            <label className="statu right">还款中</label>
-                                        </div>
-                                        <div className="col-md-10">
-                                            <div className="pro-val">
-                                                <span className="fs-26 c-f63">6<em className="fs-16">.50%</em></span>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="pro-val">
-                                                <span className="fs-16">3个月</span>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-8 txtr">
-                                            <div className="pro-val">
-                                                <span className="fs-16">1100.00元</span>
-                                            </div>
-                                        </div>
-                                        <div className="progress clearfix">
-                                            <div className="bar-inner"></div>
-                                            <span className="num">100%</span>
-                                        </div>
-                                        <div className="col-md-24 other">
-                                            <span>每月还息到期还本</span>
-                                        </div>
-                                    </div>
-                                </li>
+                                {(()=>{
+                                    return this.state.list.map((item,index)=>{
+                                        return(
+                                            <li className="loan-pitem finish clearfix"><Link className="block-link" to="/"></Link>
+                                                <div className="row clearfix">
+                                                    <div className="pro-name col-md-24 clearfix">
+                                                        <span className="fs-14 c-666">{item.loanTitle}</span>
+                                                        <label className="statu right">还款中</label>
+                                                    </div>
+                                                    <div className="col-md-10">
+                                                        <div className="pro-val">
+                                                            <span className="fs-26 c-f63">{parseInt(item.baseRate)}<em className="fs-16">.{
+                                                                (()=>{
+                                                                    var num=item.baseRate.toFixed(2);
+                                                                    var str=num.toString()
+                                                                    var arrs=str.split(".")
+                                                                    return arrs[1]
+                                                                })()
+                                                            }%</em></span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                        <div className="pro-val">
+                                                            <span className="fs-16">{item.termName}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-8 txtr">
+                                                        <div className="pro-val">
+                                                            <span className="fs-16">{((item.loanShare)/10000).toFixed(2)}万</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="progress clearfix">
+                                                        <div className="bar-inner"></div>
+                                                        <span className="num">100%</span>
+                                                    </div>
+                                                    <div className="col-md-24 other">
+                                                        <span>{item.repayMethodName}</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        )
+                                    })
+                                })()}
+                                
                             </ul>           
                             <div> 
                                 <div className="drop-statu-box">
@@ -61,6 +89,15 @@ class Xbulk extends Component {
                 </div>
             </div>
         )
+    }
+    componentDidMount() {
+        store.on("inputValue",(data)=>{
+            console.log(data);
+            this.setState({
+                inputValue:data
+            })
+        })
+        this.loadMore()
     }
     // js
 }
