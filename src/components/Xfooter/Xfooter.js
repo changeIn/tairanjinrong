@@ -15,7 +15,7 @@ class Xfooter extends Component {
                 
             },{
                 title:"出借",
-                href:"/",
+                href:"/terran/contact/",
                 className:"nav-invest",
                 
             },{

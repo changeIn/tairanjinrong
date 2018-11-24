@@ -80,7 +80,7 @@ class Details extends Component {
 						<div className="suspend-nav-container">
 							<ul>
 								<li className="nav-item transition home">
-									<a href="/index"><span className="icon">首页</span></a>
+									<Link to="/terran/home"><span className="icon">首页</span></Link>
 								</li>
 								<li className="nav-item transition calculator">
 									<a href="https://jrhelp.trc.com/calculator/trc_calculator_h5?yearRate=11.10&amp;repayMethod=1&amp;term=0&amp;termMonth=24">
@@ -94,7 +94,7 @@ class Details extends Component {
 					<div className="container mod-purchase-bar">
 						<div className="row orange-bar">
 							<div className="col-md-24">
-								<a className="block-link" href="/security/realname/authorize"></a><span>请先实名认证</span></div>
+								<Link className="block-link" to="/Xshenfen"></Link><span>请先实名认证</span></div>
 						</div>
 					</div>
 				</div>

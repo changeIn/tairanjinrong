@@ -14,6 +14,7 @@ import Fund from './pages/Fund/Fund.jsx';
 import Details from './pages/Details/Details.jsx';
 import Xshenfen from './components/Xshenfen/Xshenfen.jsx';
 import Record from './pages/Record/Record.jsx';
+
 import * as serviceWorker from './serviceWorker';
 React.axios = axios;
 //创建仓库

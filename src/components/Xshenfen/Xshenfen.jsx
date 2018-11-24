@@ -2,6 +2,7 @@ import React, {
 	Component
 } from 'react';
 import './Xshenfen.css';
+import "../../access/webStatistics.css"
 import { Link } from "react-router-dom";
 class Xshenfen extends Component {
 	constructor(props) {
@@ -25,7 +26,9 @@ class Xshenfen extends Component {
 		
 	}
 	
-
+		tishi(){
+			alert("系统出错")
+		}
 	render() {
 		return(
 			<div className="page-my-wrap">
@@ -43,8 +46,10 @@ class Xshenfen extends Component {
 						</div>
 						<div className="container">
 							<div className="col-md-24 msg"><span className="c-red"></span></div>
-							<div className="col-md-24"><span className="trc-btn trc-btn-block trc-btn-orange">下一步</span></div>
-							<div className="col-md-24"><input type="checkbox" id="p_1" /><label htmlFor="p_1">本人已阅读并同意<a className="c-f25a2b" href="https://jrcg.trc.com/trc_app/protocol/account">《出借人服务协议》</a></label></div>
+							<div className="col-md-24"><span className="trc-btn trc-btn-block trc-btn-orange" onClick={this.tishi.bind(this)}>下一步</span></div>
+							<div className="col-md-24">
+							<input type="checkbox" id="p_1" />
+								<label htmlFor="p_1" >本人已阅读并同意<a className="c-f25a2b" href="https://jrcg.trc.com/trc_app/protocol/account">《出借人服务协议》</a></label></div>
 							<div className="col-md-24 remind">
 								<h4>温馨提示</h4>
 								<ul>
