@@ -1,28 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route , Redirect} from "react-router-dom";
-import './index.css';
-
-import Signin from './pages/Signin/signin.jsx';
-import Login from './pages/Login/Login.jsx';
-import My from './pages/My/My.jsx';
-import Home from './pages/Home/Home.jsx';
-import Profile from './pages/Profile/Profile.jsx';
+import App from './App.js';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-	<Router>
-		<div>
-			<Route path="/" exact component={Home} />
-			<Route path="/signin" component={Signin} />
-			<Route path="/login" component={Login} />
-			<Route path="/my" component={My} />
-			<Route path="/profile" component={Profile} />
-			
-			
+import './index.css';
 
-		</div>
-	</Router>
+ReactDOM.render(
+	<App />
 	,
 	document.getElementById('root'));
 
