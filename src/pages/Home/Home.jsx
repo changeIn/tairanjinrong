@@ -1,7 +1,7 @@
 import React, {
     Component
 } from "react";
-import "./Home.jsx";
+// import "./Home.jsx";
 // import "../../assets/swiper.js";
 import Xheader from '../../components/Xheader/Xheader.js';
 import Xlist from '../../components/Xlist/Xlist.js';
